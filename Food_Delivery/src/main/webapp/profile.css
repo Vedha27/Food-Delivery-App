@@ -1,0 +1,299 @@
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(rgba(0, 0, 40, 0.6), rgba(0, 0, 60, 0.6)), url('images/bg.avif');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #fff;
+  padding-top: 100px;
+}
+
+/* === Navbar === */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to right, #007CF0, #00DFD8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+}
+
+.app-name-gradient {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #FDC830, #F37335);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === Nav Links === */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(90deg, #8E2DE2, #4A00E0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  padding: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -2px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.toggle-icon,
+.close-btn {
+  display: none;
+  cursor: pointer;
+}
+
+/* === Profile Wrapper === */
+.profile-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+.profile-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #fcd535;
+  margin-bottom: 25px;
+}
+
+/* === Profile Card === */
+.profile-card {
+  background: #fff;
+  color: #333;
+  border: 1.5px solid #00DFD8;
+  border-radius: 14px;
+  padding: 30px 35px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.profile-row:last-child {
+  border-bottom: none;
+}
+
+.profile-row div {
+  flex: 1;
+}
+
+.profile-row span {
+  font-weight: bold;
+  color: #007CF0;
+  margin-right: 8px;
+}
+
+/* === Please Login Card === */
+.please-login-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 450px;
+  width: 90%;
+  margin: 80px auto;
+}
+
+.please-login-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.please-login-card a {
+  color: #ff5733;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.profile-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  background:  #004080;
+  color: #fff;
+}
+
+.logout-btn {
+  background: linear-gradient(to right, #FF512F, #DD2476);
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(to right, #92FE9D, #00C9FF);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(to right, #DD2476, #FF512F);
+}
+
+/* === Footer === */
+.footer {
+  background: linear-gradient(to right, #007CF0, #00DFD8);
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+}
+
+.footer-links h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  display: block;
+  color: #e0f7fa;
+  margin: 4px 0;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-socials {
+  margin: 15px 0;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-copy {
+  font-size: 0.95rem;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .profile-row {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background: white;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    padding-top: 80px;
+    transition: left 0.3s ease;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links .close-btn {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #004080;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    color: #004080 !important;
+    background: none !important;
+    -webkit-text-fill-color: unset !important;
+    background-clip: unset !important;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  .toggle-icon {
+    display: block;
+    font-size: 1.8rem;
+    color: white;
+  }
+}

@@ -1,0 +1,105 @@
+/* Reset & Base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background:#00C9A7;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: fadeInBody 1s ease-in-out;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Error Container */
+.error-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  animation: slideIn 0.7s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Error Icon */
+.error-icon {
+  width: 80px;
+  margin-bottom: 20px;
+  animation: shake 0.6s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Headings & Text */
+.error-container h1 {
+  font-size: 2rem;
+  color: #e53935;
+  margin-bottom: 10px;
+}
+
+.error-container p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Back Button */
+.back-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #00C9A7;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 65, 108, 0.3);
+}
+
+/* Floating animated bubbles background (optional) */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 20%, transparent 20%),
+              radial-gradient(circle, rgba(255,255,255,0.05) 20%, transparent 20%);
+  background-position: 0 0, 40px 40px;
+  background-size: 80px 80px;
+  animation: floatBubbles 15s linear infinite;
+  z-index: 0;
+  top: -50%;
+  left: -50%;
+}
+
+@keyframes floatBubbles {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100px); }
+}
+
+.error-container, .error-icon, .back-button {
+  position: relative;
+  z-index: 1;
+}

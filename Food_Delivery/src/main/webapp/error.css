@@ -1,0 +1,79 @@
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .error-box {
+      background: rgba(255, 255, 255, 0.1);
+      background: linear-gradient(to right, #00C9A7, #007CF0);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      animation: slideIn 0.7s ease-in-out;
+    }
+
+    .error-box h1 {
+      font-size: 5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #FFD700, #FF5733);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .error-box h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .error-box p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .home-btn {
+      text-decoration: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      border-radius: 25px;
+      background: linear-gradient(to right, #F37335, #FDC830);
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    .home-btn:hover {
+      background: linear-gradient(to right, #e05a1d, #fcb045);
+      transform: translateY(-2px);
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .error-icon {
+      font-size: 3rem;
+      color: #ffcccb;
+      margin-bottom: 10px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+

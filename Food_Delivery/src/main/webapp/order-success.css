@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #002b5c, #004e92);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.success-container {
+  text-align: center;
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 20px;
+  animation: fadeIn 1.2s ease-out;
+}
+.emoji {
+  color: #fff; /* or any static color you want for the emoji */
+  margin-right: 8px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #FDC830, #F37335);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+}
+
+.message p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #ffff;
+}
+
+.quote {
+  font-size: 1.2rem;
+  color: #cfdde6;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color:  #ffff;
+  padding: 10px 20px;
+  border: 2px solid #00DFD8;
+  border-radius: 30px;
+  margin-top: 30px;
+  transition: 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #00DFD8;
+  color: #003b80;
+}
+
+/* === Delivery Animation === */
+.delivery-scene {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.bike-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: -200px;
+  display: flex;
+  align-items: flex-end; /* fixes speech bubble position */
+  animation: bikeMove 12s linear forwards;
+  z-index: 10; /* make sure it's above background */
+}
+
+.bike {
+  width: 160px;
+  height: auto;
+}
+.speech-bubble {
+  position: absolute;
+  bottom: 130px;     /* was 100px — now slightly higher */
+  left: -120px;      /* stays on the back/left side of the bike */
+  background: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  animation: floatUp 3s ease-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 5;
+}
+
+
+@keyframes bikeMove {
+  0%   { left: -200px; transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { left: 110%; transform: scale(1); }
+}
+
+@keyframes floatUp {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* 👇 Add below existing styles */
+
+.bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Confetti canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+@media (max-width: 768px) {
+  .success-container {
+    padding-top: 10px;
+    margin-top: -40px; /* shifts message upward */
+  }
+
+  .message h1 {  
+    padding-top: 10px;
+    font-size: 3rem;
+  }
+
+  .message p,
+  .quote {
+    font-size: 1rem;
+  }
+
+  .speech-bubble {
+    bottom: 100px; /* move a bit closer for mobile */
+    left: 40px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .speech-bubble {
+    bottom: 90px;
+    left: -90px; /* slightly closer on small screens */
+    font-size: 1rem;
+  }
+}
+

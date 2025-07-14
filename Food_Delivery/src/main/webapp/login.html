@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Vedlicious</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader"></div>
+
+  <div class="login-wrapper">
+    <div class="content-box">
+      
+      <!-- Welcome Section -->
+      <div class="welcome-box">
+        <div class="logo">
+          <img src="images/logo.png" alt="Logo" />
+          <span class="app-name-gradient">Vedlicious</span>
+        </div>
+        <h1 class="welcome-title">Welcome Back!</h1>
+        <p class="welcome-tagline">Login to enjoy delicious food delivered fast.</p>
+        <img src="images/delivery.png" alt="Welcome" class="welcome-image" />
+      </div>
+
+      <!-- Login Form -->
+      <div class="form-box fadeInUp">
+        <h2>Login to Your Account</h2>
+        <form action="login" method="POST">
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <button type="submit">Login</button>
+
+          <p class="register-link">
+            Don’t have an account?
+            <a href="register.html">Register here</a>
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    window.onload = () => {
+      document.getElementById("loader").style.display = "none";
+    };
+  </script>
+</body>
+</html>
